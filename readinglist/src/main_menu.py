@@ -29,10 +29,10 @@ class MainMenu:
 
     def main_menu(self):
 
-        print("Welcome to Reading List")
+        print("\nWelcome to Reading List")
         print("1. Enter a search query")
         print("2. View Reading List")
-        print("3. Exit")
+        print("3. Exit\n")
 
         while True:
             menu_option = self.menu_option_input("Enter a menu option: ")
