@@ -34,7 +34,16 @@ class MainMenu:
         print("2. View Reading List")
         print("3. Exit")
 
-        menu_option = self.menu_option_input("Enter a menu option: ")
-        self.set_menu_option(menu_option)
+        while True:
+            menu_option = self.menu_option_input("Enter a menu option: ")
 
-        return menu_option
+            if menu_option.isnumeric():
+                menu_option_int = int(menu_option)
+                if menu_option_int in range(1, 4):
+                    break
+                else:
+                    print("Enter a correct number")
+            else:
+                print("Enter a correct number")
+
+        return menu_option_int

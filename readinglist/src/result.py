@@ -10,7 +10,7 @@ class Result:
 
     def get_five_book_results(self, data):
         self.data = data
-        results = defaultdict(list)
+        five_books = defaultdict(list)
 
         for book in range(5):
 
@@ -29,22 +29,22 @@ class Result:
             except:
                 publisher = "Not found"
 
-            results['book' + str(book)].append([author, title, publisher])
+            five_books['book' + str(book)].append([author, title, publisher])
 
-        return results
+        return five_books
 
-    def display_results_menu(self, results):
-        self.results = results
+    def display_results_menu(self, five_books):
+        self.results = five_books
 
-        print(f"1. Author: {self.results['book0'][0][0][0]}. Title: {results['book0'][0][1]}. "
+        print(f"1. Author: {self.results['book0'][0][0][0]}. Title: {five_books['book0'][0][1]}. "
               f"Publisher: {self.results['book0'][0][2]}")
-        print(f"2. Author: {self.results['book1'][0][0][0]}. Title: {results['book1'][0][1]}. "
+        print(f"2. Author: {self.results['book1'][0][0][0]}. Title: {five_books['book1'][0][1]}. "
               f"Publisher: {self.results['book1'][0][2]}")
-        print(f"3. Author: {self.results['book2'][0][0][0]}. Title: {results['book2'][0][1]}. "
+        print(f"3. Author: {self.results['book2'][0][0][0]}. Title: {five_books['book2'][0][1]}. "
               f"Publisher: {self.results['book2'][0][2]}")
-        print(f"4. Author: {self.results['book3'][0][0][0]}. Title: {results['book3'][0][1]}. "
+        print(f"4. Author: {self.results['book3'][0][0][0]}. Title: {five_books['book3'][0][1]}. "
               f"Publisher: {self.results['book3'][0][2]}")
-        print(f"5. Author: {self.results['book4'][0][0][0]}. Title: {results['book4'][0][1]}. "
+        print(f"5. Author: {self.results['book4'][0][0][0]}. Title: {five_books['book4'][0][1]}. "
               f"Publisher: {self.results['book4'][0][2]}")
 
     def prompt_result_option(self):
