@@ -1,2 +1,5 @@
+from readinglist.src.main_menu import MainMenu
+
+
 def run():
-    return None
+    MainMenu().main_menu()

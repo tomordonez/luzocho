@@ -1,9 +1,9 @@
 # Main Menu
 
 1. Can I load Main Menu?
-2. Get Search query input when I pass in 1
-3. Get Reading list when I pass in 2
-4. Exit when I pass in 3
+2. Validate Search menu option when I pass in 1
+3. Validate Reading list option when I pass in 2
+4. Validate Exit option when I pass in 3
 5. Validate incorrect input when I pass in any other value
 
 # Reading List
