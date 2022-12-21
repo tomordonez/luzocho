@@ -33,6 +33,11 @@ Tested:
 * User input when selecting an option from the menu
 * Get a response from Google Books API using a mock
 
+Running tests:
+
+* The tests run from Pycharm in the `tests` folder
+* I couldn't figure how to run the tests from the terminal
+
 # How Google Books API search works
 
 As seen in [Google Books API](https://developers.google.com/books/docs/v1/using), searching 

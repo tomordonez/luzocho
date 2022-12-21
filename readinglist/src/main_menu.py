@@ -12,12 +12,12 @@ class MainMenu:
     def set_menu_option(self, menu_option):
         self.menu_option = menu_option
 
-    def menu_option_input(self, text):
+    def capture_menu_option_input(self, text):
         self.text = text
         return input(self.text)
 
     def validate_menu_option(self):
-        menu_option = self.menu_option_input("Enter a menu option: ")
+        menu_option = self.capture_menu_option_input("Enter a menu option: ")
         if menu_option == "1":
             return 1
         elif menu_option == "2":
@@ -27,7 +27,7 @@ class MainMenu:
         else:
             return "Incorrect option"
 
-    def main_menu(self):
+    def display_main_menu(self):
 
         print("\nWelcome to Reading List")
         print("1. Enter a search query")
@@ -35,7 +35,7 @@ class MainMenu:
         print("3. Exit\n")
 
         while True:
-            menu_option = self.menu_option_input("Enter a menu option: ")
+            menu_option = self.capture_menu_option_input("Enter a menu option: ")
 
             if menu_option.isnumeric():
                 menu_option_int = int(menu_option)
