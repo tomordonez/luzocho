@@ -15,7 +15,9 @@ def run():
         url = search.search_query(query)
         data = search.request_data(url)
         result = Result()
-        result.results_menu(data)
+        five_books = result.get_five_book_results(data)
+        result.display_results_menu(five_books)
+        result_selected = result.prompt_result_option()
 
     elif menu_option == "2":
         pass
