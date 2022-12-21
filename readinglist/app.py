@@ -7,7 +7,6 @@ from readinglist.src.result import Result
 
 def run():
     menu_option = MainMenu().main_menu()
-    print(menu_option)
 
     if menu_option == "1":
         search = Search()
