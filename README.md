@@ -6,13 +6,31 @@ A small CLI app that lets you query Google Books API.
 * You can select a book from the list to save to a "Reading List"
 * You can view the "Reading List" with all books saved
 
-# Run the program
+# Install/Run
 
-From the terminal using `python -m readinglist` or from an IDE, run `__main__.py`.
+**From Terminal**
+
+1. Git clone the repo.
+2. Open repo directory `cd luzocho`
+3. Install the conda env `conda env create --file=environment.yml`
+4. Activate the env `conda activate luzocho`
+5. From the terminal `python -m readinglist`
+
+**From PyCharm**
+
+1. Open cloned repo
+2. Main menu/File/Open
+3. Browse the directory that has the repo source file and the environment.yml
+4. More details in PyCharm [here](https://www.jetbrains.com/help/pycharm/conda-support-creating-conda-virtual-environment.html#conda-requirements)
+5. Then run `__main__.py`.
 
 # TDD
 
 See `use_cases.md` for details.
+
+I had the best intentions for testing the API responses. There were some complex examples I 
+found online about mocking the API, and tried a few, but I couldn't completely understand this 
+code, so I didn't add these tests.
 
 # How Google Books API search works
 
