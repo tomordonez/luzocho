@@ -2,11 +2,13 @@ from collections import defaultdict
 
 
 class Result:
-    
+
     def __init__(self):
+        self.five_books = None
+        self.results = None
         self.data = None
 
-    def results_menu(self, data):
+    def get_five_book_results(self, data):
         self.data = data
         results = defaultdict(list)
 
@@ -29,13 +31,34 @@ class Result:
 
             results['book' + str(book)].append([author, title, publisher])
 
-        print(f"1. Author: {results['book0'][0][0][0]}. Title: {results['book0'][0][1]}. "
-              f"Publisher: {results['book0'][0][2]}")
-        print(f"2. Author: {results['book1'][0][0][0]}. Title: {results['book1'][0][1]}. "
-              f"Publisher: {results['book1'][0][2]}")
-        print(f"3. Author: {results['book2'][0][0][0]}. Title: {results['book2'][0][1]}. "
-              f"Publisher: {results['book2'][0][2]}")
-        print(f"4. Author: {results['book3'][0][0][0]}. Title: {results['book3'][0][1]}. "
-              f"Publisher: {results['book3'][0][2]}")
-        print(f"5. Author: {results['book4'][0][0][0]}. Title: {results['book4'][0][1]}. "
-              f"Publisher: {results['book4'][0][2]}")
+        return results
+
+    def display_results_menu(self, results):
+        self.results = results
+
+        print(f"1. Author: {self.results['book0'][0][0][0]}. Title: {results['book0'][0][1]}. "
+              f"Publisher: {self.results['book0'][0][2]}")
+        print(f"2. Author: {self.results['book1'][0][0][0]}. Title: {results['book1'][0][1]}. "
+              f"Publisher: {self.results['book1'][0][2]}")
+        print(f"3. Author: {self.results['book2'][0][0][0]}. Title: {results['book2'][0][1]}. "
+              f"Publisher: {self.results['book2'][0][2]}")
+        print(f"4. Author: {self.results['book3'][0][0][0]}. Title: {results['book3'][0][1]}. "
+              f"Publisher: {self.results['book3'][0][2]}")
+        print(f"5. Author: {self.results['book4'][0][0][0]}. Title: {results['book4'][0][1]}. "
+              f"Publisher: {self.results['book4'][0][2]}")
+
+    def prompt_result_option(self):
+
+        while True:
+            save_option = input("Select the book to save to reading list [1-5]: ")
+
+            if save_option.isnumeric():
+                save_option_int = int(save_option)
+                if save_option_int in range(1, 6):
+                    break
+                else:
+                    print("Enter a correct number")
+            else:
+                print("Enter a correct number")
+
+        return save_option_int
