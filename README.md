@@ -13,3 +13,29 @@ From the terminal using `python -m readinglist` or from an IDE, run `__main__.py
 # TDD
 
 See `use_cases.md` for details.
+
+# How Google Books API search works
+
+As seen in [Google Books API](https://developers.google.com/books/docs/v1/using), searching 
+doesn't require authentication. You can get an url like this, and it returns 10 results:
+
+    https://www.googleapis.com/books/v1/volumes?q=test+driven+development
+
+Request the URL using the following syntax:
+
+    url = urllib.request.urlopen("https://www.googleapis.com/books/v1/volumes?q=test+driven+development")
+
+You can see the response status with:
+
+    url.status
+
+Then parse it with json:
+
+    import json
+    json_data = json.loads(data.decode('utf-8'))
+
+The results are contained in `json_data['items']`
+
+# References
+
+* Remove punctuation in a string [here](https://stackoverflow.com/a/266162)

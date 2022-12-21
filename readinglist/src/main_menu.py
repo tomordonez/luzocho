@@ -19,13 +19,12 @@ class MainMenu:
     def validate_menu_option(self):
         menu_option = self.menu_option_input("Enter a menu option: ")
         if menu_option == "1":
-            return "Search query"
+            return 1
         elif menu_option == "2":
-            return "Reading list"
+            return 2
         elif menu_option == "3":
-            return "Exit"
+            return 3
         else:
-            print("You entered an incorrect option")
             return "Incorrect option"
 
     def main_menu(self):
@@ -35,5 +34,7 @@ class MainMenu:
         print("2. View Reading List")
         print("3. Exit")
 
-        menu_option = self.validate_menu_option()
+        menu_option = self.menu_option_input("Enter a menu option: ")
         self.set_menu_option(menu_option)
+
+        return menu_option
