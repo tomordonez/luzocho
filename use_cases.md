@@ -13,8 +13,9 @@
 
 # Search query
 
-1. Reload search query input when I pass in empty (space, or Enter new line)
-2. Load Results menu when I pass in any alphanumeric character or word (test missing)
+1. Test a response to Google Books API (tested)
+2. Reload search query input when I pass in empty (space, or Enter new line)
+3. Load Results menu when I pass in any alphanumeric character or word (test missing)
 
 # Results menu
 (tests missing)
