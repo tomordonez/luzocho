@@ -28,9 +28,10 @@ A small CLI app that lets you query Google Books API.
 
 See `use_cases.md` for details.
 
-I had the best intentions for testing the API responses. There were some complex examples I 
-found online about mocking the API, and tried a few, but I couldn't completely understand this 
-code, so I didn't add these tests.
+Tested:
+
+* User input when selecting an option from the menu
+* Get a response from Google Books API using a mock
 
 # How Google Books API search works
 

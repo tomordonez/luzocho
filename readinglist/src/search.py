@@ -2,6 +2,8 @@ import urllib.request
 import json
 import string
 
+from readinglist.src.constants import BASE_URL
+
 
 class Search:
     def __init__(self):
@@ -13,10 +15,15 @@ class Search:
             .lower() \
             .replace(" ", "+")
 
-        google_books_base_url = "https://www.googleapis.com/books/v1/volumes?q="
-
-        url = google_books_base_url + self.query
+        url = BASE_URL + self.query
         return url
+
+    def request_response(self, url):
+        self.url = urllib.request.urlopen(url)
+        if self.url.status == 200:
+            return self.url
+        else:
+            return None
 
     def request_data(self, url):
         self.url = urllib.request.urlopen(url)
