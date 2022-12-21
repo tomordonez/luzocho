@@ -10,7 +10,7 @@ class Search:
         self.query = None
         self.url = None
 
-    def search_query(self, query):
+    def construct_search_query_url(self, query):
         self.query = query.translate(str.maketrans('', '', string.punctuation)) \
             .lower() \
             .replace(" ", "+")
@@ -18,14 +18,14 @@ class Search:
         url = BASE_URL + self.query
         return url
 
-    def request_response(self, url):
+    def request_response_google_api(self, url):
         self.url = urllib.request.urlopen(url)
         if self.url.status == 200:
             return self.url
         else:
             return None
 
-    def request_data(self, url):
+    def construct_json_data_google_api(self, url):
         self.url = urllib.request.urlopen(url)
         data = self.url.read()
         json_data = json.loads(data.decode('utf-8'))
