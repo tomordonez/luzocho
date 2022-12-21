@@ -34,7 +34,8 @@ Then parse it with json:
     import json
     json_data = json.loads(data.decode('utf-8'))
 
-The results are contained in `json_data['items']`
+The results are contained in `json_data['items']`. Then each book data is located in `[index]
+['volumeInfo']`
 
 # References
 
