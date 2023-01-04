@@ -16,17 +16,6 @@ class MainMenu:
         self.text = text
         return input(self.text)
 
-    def validate_menu_option(self):
-        menu_option = self.capture_menu_option_input("Enter a menu option: ")
-        if menu_option == "1":
-            return 1
-        elif menu_option == "2":
-            return 2
-        elif menu_option == "3":
-            return 3
-        else:
-            return "Incorrect option"
-
     def display_main_menu(self):
 
         print("\nWelcome to Reading List")
