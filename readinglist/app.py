@@ -18,13 +18,16 @@ def run():
 
             if data is not None:
                 result = Result()
-                five_books = result.get_five_book_results(data)
-                result.display_results_menu(five_books)
-                result_selected = result.prompt_result_option()
+                if data['totalItems'] is 0:
+                    print("\n**** No results were found ****")
+                else:
+                    five_books = result.get_five_book_results(data)
+                    result.display_results_menu(five_books)
+                    result_selected = result.prompt_result_option()
 
-                open_bookshelf = Bookshelf()
-                selected_book = open_bookshelf.save_book(result_selected, five_books)
-                saved_books.append(selected_book)
+                    open_bookshelf = Bookshelf()
+                    selected_book = open_bookshelf.save_book(result_selected, five_books)
+                    saved_books.append(selected_book)
 
         elif menu_option == 2:
             open_bookshelf = Bookshelf()

@@ -77,6 +77,15 @@ Correct implementation of a request response:
   no data is received, a message is shown to the user that the application couldn't connect to 
   the Google API, and it loads the menu to try again.
 
+Validate that a result is found:
+
+* When the API responds with data, one of the attributes is `data['totalItems']`, which shows an 
+  integer with the number of results. If the number is zero, the app tells the user 'No results 
+  were found'.
+* This can be tested with a random string of letters and numbers like: `ajja9djdjla` (0 results)
+* Trying to outsmart the Google API is beyond this application :) Queries like these produce 
+  results: `abc123xyz` (402 results), `r4ndom l33ters` (16 results)
+
 # References
 
 * Remove punctuation in a string [here](https://stackoverflow.com/a/266162)
