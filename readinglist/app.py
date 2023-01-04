@@ -1,4 +1,5 @@
 from bookresult import BookResult
+from booksaver import BookSaver
 from readinglist.src.main_menu import MainMenu
 from readinglist.src.search import Search
 from readinglist.src.resultmenu import ResultMenu
@@ -28,8 +29,8 @@ def run():
                     result_menu.display_results_menu(five_books)
                     result_selected = result_menu.prompt_result_option()
 
-                    open_bookshelf = Bookshelf()
-                    selected_book = open_bookshelf.save_book(result_selected, five_books)
+                    book_saver = BookSaver()
+                    selected_book = book_saver.save_book(result_selected, five_books)
                     saved_books.append(selected_book)
 
         elif menu_option == 2:

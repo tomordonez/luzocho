@@ -91,6 +91,9 @@ Separate presentation from business logic:
 * The `Result` class was refactored into two classes:
   * `BookResult` to extract the data for the five book results
   * `ResultMenu` to display the menu with the five results and let the user choose one.
+* The `Bookshelf` class was refactored into two classes:
+  * `BookSaver` to save selected result to the bookshelf
+  * `Bookshelf` to show the list of saved books
 
 # References
 
