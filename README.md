@@ -61,6 +61,13 @@ Then parse it with json:
 The results are contained in `json_data['items']`. Then each book data is located in `[index]
 ['volumeInfo']`
 
+# Feedback Refactor
+
+* Refactor, remove unused code that is not essential to run the application.
+  * The method `validate_menu_option` in `MainMenu` was removed as it was only there to pass a 
+    test, that was also removed.
+  * The getter and setter method in `MainMenu` were removed as they were not used.
+
 # References
 
 * Remove punctuation in a string [here](https://stackoverflow.com/a/266162)

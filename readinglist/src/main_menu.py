@@ -1,16 +1,7 @@
-from readinglist.src.search import Search
-
-
 class MainMenu:
     def __init__(self):
         self.text = None
         self.menu_option = None
-
-    def get_menu_option(self):
-        return self.menu_option
-
-    def set_menu_option(self, menu_option):
-        self.menu_option = menu_option
 
     def capture_menu_option_input(self, text):
         self.text = text
