@@ -1,6 +1,7 @@
+from bookresult import BookResult
 from readinglist.src.main_menu import MainMenu
 from readinglist.src.search import Search
-from readinglist.src.result import Result
+from readinglist.src.resultmenu import ResultMenu
 from readinglist.src.bookshelf import Bookshelf
 
 
@@ -17,13 +18,15 @@ def run():
             data = search.construct_json_data_google_api(url)
 
             if data is not None:
-                result = Result()
-                if data['totalItems'] is 0:
+                result_menu = ResultMenu()
+                book_result = BookResult()
+
+                if data['totalItems'] == 0:
                     print("\n**** No results were found ****")
                 else:
-                    five_books = result.get_five_book_results(data)
-                    result.display_results_menu(five_books)
-                    result_selected = result.prompt_result_option()
+                    five_books = book_result.get_five_book_results(data)
+                    result_menu.display_results_menu(five_books)
+                    result_selected = result_menu.prompt_result_option()
 
                     open_bookshelf = Bookshelf()
                     selected_book = open_bookshelf.save_book(result_selected, five_books)

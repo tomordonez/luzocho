@@ -86,6 +86,12 @@ Validate that a result is found:
 * Trying to outsmart the Google API is beyond this application :) Queries like these produce 
   results: `abc123xyz` (402 results), `r4ndom l33ters` (16 results)
 
+Separate presentation from business logic:
+
+* The `Result` class was refactored into two classes:
+  * `BookResult` to extract the data for the five book results
+  * `ResultMenu` to display the menu with the five results and let the user choose one.
+
 # References
 
 * Remove punctuation in a string [here](https://stackoverflow.com/a/266162)
