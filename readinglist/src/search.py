@@ -26,7 +26,10 @@ class Search:
             return None
 
     def construct_json_data_google_api(self, url):
-        self.url = urllib.request.urlopen(url)
-        data = self.url.read()
-        json_data = json.loads(data.decode('utf-8'))
-        return json_data
+        self.url = self.request_response_google_api(url)
+        try:
+            data = self.url.read()
+            json_data = json.loads(data.decode('utf-8'))
+            return json_data
+        except AttributeError:
+            print("\nConnection to Google API not successful. Please try again")

@@ -63,10 +63,19 @@ The results are contained in `json_data['items']`. Then each book data is locate
 
 # Feedback Refactor
 
-* Refactor, remove unused code that is not essential to run the application.
-  * The method `validate_menu_option` in `MainMenu` was removed as it was only there to pass a 
-    test, that was also removed.
-  * The getter and setter method in `MainMenu` were removed as they were not used.
+Remove unused code that is not essential to run the application:
+
+* The method `validate_menu_option` in `MainMenu` was removed as it was only there to pass a 
+test, that was also removed.
+* The getter and setter method in `MainMenu` were removed as they were not used.
+* An unused import in `MainMenu` was removed
+
+Correct implementation of a request response:
+
+* The method `request_response_google_api` in `Search` was not used. Called this method in 
+  `construct_json_data_google_api` to verify that a successful `200 OK` response is received. If 
+  no data is received, a message is shown to the user that the application couldn't connect to 
+  the Google API, and it loads the menu to try again.
 
 # References
 
