@@ -94,6 +94,8 @@ Separate presentation from business logic:
 * The `Bookshelf` class was refactored into two classes:
   * `BookSaver` to save selected result to the bookshelf
   * `Bookshelf` to show the list of saved books
+* The `app.py` script was refactored and extracted the business logic to another class:
+  * `MainMenuOption` to process the selected option from the main menu
 
 # References
 
