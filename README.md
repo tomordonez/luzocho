@@ -16,6 +16,10 @@ A small CLI app that lets you query Google Books API.
 4. Activate the env `conda activate luzocho`
 5. From the terminal `python -m readinglist`
 
+Note that if a conda environment named `luzocho` already exists in your system. You would need 
+to modify the `environment.yml` file. On the first line that says `name: luzocho`, change the 
+name to something else. Then activate that environment.
+
 **From PyCharm**
 
 1. Open cloned repo
@@ -91,9 +95,11 @@ Separate presentation from business logic:
 * The `Result` class was refactored into two classes:
   * `BookResult` to extract the data for the five book results
   * `ResultMenu` to display the menu with the five results and let the user choose one.
+
 * The `Bookshelf` class was refactored into two classes:
   * `BookSaver` to save selected result to the bookshelf
   * `Bookshelf` to show the list of saved books
+
 * The `app.py` script was refactored and extracted the business logic to another class:
   * `MainMenuOption` to process the selected option from the main menu
 
@@ -102,8 +108,9 @@ Save results to a file:
 * Implemented the class `BookshelfExporter`
   * It exports the saved books to the file `data/bookshelf_data.txt` if books were saved. If no 
     books were saved, it shows a corresponding message, and a file is not created.
-  * The next time the application runs, if the user saves books, upon exiting, these books are 
-    appended the exported file.
+  * The next time the application runs, if the user saves books, upon exiting, this data is 
+    exported to the file.
+
 * Implemented the class `BookshelfImporter`
   * It imports saved books if the file exists `data/bookshelf_data.txt`.
   * The imported books can be displayed in `View Reading List`

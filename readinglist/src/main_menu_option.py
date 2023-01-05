@@ -1,8 +1,8 @@
-from bookresult import BookResult
-from booksaver import BookSaver
-from bookshelf import Bookshelf
-from resultmenu import ResultMenu
-from search import Search
+from readinglist.src.bookresult import BookResult
+from readinglist.src.booksaver import BookSaver
+from readinglist.src.bookshelf import Bookshelf
+from readinglist.src.resultmenu import ResultMenu
+from readinglist.src.search import Search
 
 
 class MainMenuOption:

@@ -1,6 +1,6 @@
-from bookshelf_exporter import BookshelfExporter
-from bookshelf_importer import BookshelfImporter
-from main_menu_option import MainMenuOption
+from readinglist.src.bookshelf_exporter import BookshelfExporter
+from readinglist.src.bookshelf_importer import BookshelfImporter
+from readinglist.src.main_menu_option import MainMenuOption
 from readinglist.src.main_menu import MainMenu
 
 
