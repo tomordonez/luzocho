@@ -1,3 +1,4 @@
+from bookshelf_exporter import BookshelfExporter
 from main_menu_option import MainMenuOption
 from readinglist.src.main_menu import MainMenu
 
@@ -17,4 +18,5 @@ def run():
             MainMenuOption().view_reading_list(saved_books)
 
         elif menu_option == 3:
+            BookshelfExporter().export_bookshelf_textfile(saved_books)
             break

@@ -97,6 +97,15 @@ Separate presentation from business logic:
 * The `app.py` script was refactored and extracted the business logic to another class:
   * `MainMenuOption` to process the selected option from the main menu
 
+Save results to a file:
+
+* Implemented the class `BookshelfExporter`
+  * It exports the saved books to the file `data/bookshelf_data.txt` if books were saved. If no 
+    books were saved, it shows a corresponding message, and a file is not created.
+  * The next time the application runs, if the user saves books, upon exiting, these books are 
+    appended the exported file.
+
+
 # References
 
 * Remove punctuation in a string [here](https://stackoverflow.com/a/266162)
