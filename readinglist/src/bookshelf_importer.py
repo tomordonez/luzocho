@@ -6,7 +6,7 @@ class BookshelfImporter:
 
     @staticmethod
     def import_bookshelf_textfile():
-        filepath = Path('data/bookshelf_data.txt')
+        filepath = Path(__file__).parent.parent / 'data' / 'bookshelf_data.txt'
         saved_books = []
         if filepath.exists():
             with filepath.open('r') as file:
