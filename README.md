@@ -104,7 +104,11 @@ Save results to a file:
     books were saved, it shows a corresponding message, and a file is not created.
   * The next time the application runs, if the user saves books, upon exiting, these books are 
     appended the exported file.
-
+* Implemented the class `BookshelfImporter`
+  * It imports saved books if the file exists `data/bookshelf_data.txt`.
+  * The imported books can be displayed in `View Reading List`
+  * The user can search and save more books, upon exiting, all the books in the Reading List are 
+    exported again to this text file.
 
 # References
 

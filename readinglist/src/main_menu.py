@@ -7,11 +7,11 @@ class MainMenu:
         self.text = text
         return input(self.text)
 
-    def display_main_menu(self):
+    def display_main_menu(self, number_of_saved_books):
 
         print("\nWelcome to Reading List")
         print("1. Enter a search query")
-        print("2. View Reading List")
+        print(f"2. View Reading List ({number_of_saved_books} books saved)")
         print("3. Exit\n")
 
         while True:

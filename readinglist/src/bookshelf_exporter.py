@@ -14,7 +14,7 @@ class BookshelfExporter:
 
             filepath = Path('data/bookshelf_data.txt')
 
-            with filepath.open('a') as bookshelf_data:
+            with filepath.open('w') as bookshelf_data:
                 if saved_books is not None:
                     for book in saved_books:
                         bookshelf_data.write(str(book) + "\n")
