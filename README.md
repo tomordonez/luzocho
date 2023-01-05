@@ -28,6 +28,47 @@ name to something else. Then activate that environment.
 4. More details in PyCharm [here](https://www.jetbrains.com/help/pycharm/conda-support-creating-conda-virtual-environment.html#conda-requirements)
 5. Then run `__main__.py`.
 
+# Demo
+
+My Gif recorder app wouldn't work so here are some screenshots.
+
+After running the application with `python -m readinglist`. A menu shows 3 options. Enter a 
+search query. If there are results, you can select the book to save to your Reading List. Then 
+exit the application.
+
+If this is the first time the application runs, it should have zero books saved. Entering option 
+`2` 
+confirms that there are no saved books.
+
+![Main Menu with no books saved](images/menu-option2-zero-books.png)
+
+The application checks when a search query is not found. First select option `1` to search a 
+query, then type a combination of letters and number such as `aasdfa9sdfas9df`
+
+![Search query not found](images/search-query-not-found.png)
+
+Select `1` to search another query, for example `java`. It shows five results. You can select 
+one of these, for example select the 1st one. The application then confirms that this selection 
+is saved to the Reading List. The menu now shows that there is 1 book saved.
+
+![Search query Java](images/search-query-java.png)
+
+![Java books is saved to reading list](images/java-book-saved-to-reading-list.png)
+
+When you exit the application, the saved book(s) from the Reading List are exported to a file.
+
+![Export reading list](images/export-reading-list.png)
+
+Start the application again. The file is imported and the Reading List shows the book 
+that was saved before.
+
+![Import reading list](images/import-reading-list.png)
+
+You can continue to search more books, select one to save to the Reading List, and upon exiting, 
+the Reading List is exported.
+
+![Continue searching books](images/continue-searching-books.png)
+
 # TDD
 
 See `use_cases.md` for details.
