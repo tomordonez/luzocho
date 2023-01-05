@@ -12,9 +12,8 @@ class BookshelfExporter:
         elif number_of_saved_books > 0:
             print(f"Your Reading List was exported with {number_of_saved_books} book(s).")
 
-            filepath = Path('data/bookshelf_data.txt')
-
-            with filepath.open('w') as bookshelf_data:
+            filepath = Path(__file__).parent.parent / 'data' / 'bookshelf_data.txt'
+            with filepath.open('w+') as bookshelf_data:
                 if saved_books is not None:
                     for book in saved_books:
                         bookshelf_data.write(str(book) + "\n")
