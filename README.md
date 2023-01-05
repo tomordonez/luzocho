@@ -61,6 +61,55 @@ Then parse it with json:
 The results are contained in `json_data['items']`. Then each book data is located in `[index]
 ['volumeInfo']`
 
+# Feedback Refactor
+
+Remove unused code that is not essential to run the application:
+
+* The method `validate_menu_option` in `MainMenu` was removed as it was only there to pass a 
+test, that was also removed.
+* The getter and setter method in `MainMenu` were removed as they were not used.
+* An unused import in `MainMenu` was removed
+
+Correct implementation of a request response:
+
+* The method `request_response_google_api` in `Search` was not used. Called this method in 
+  `construct_json_data_google_api` to verify that a successful `200 OK` response is received. If 
+  no data is received, a message is shown to the user that the application couldn't connect to 
+  the Google API, and it loads the menu to try again.
+
+Validate that a result is found:
+
+* When the API responds with data, one of the attributes is `data['totalItems']`, which shows an 
+  integer with the number of results. If the number is zero, the app tells the user 'No results 
+  were found'.
+* This can be tested with a random string of letters and numbers like: `ajja9djdjla` (0 results)
+* Trying to outsmart the Google API is beyond this application :) Queries like these produce 
+  results: `abc123xyz` (402 results), `r4ndom l33ters` (16 results)
+
+Separate presentation from business logic:
+
+* The `Result` class was refactored into two classes:
+  * `BookResult` to extract the data for the five book results
+  * `ResultMenu` to display the menu with the five results and let the user choose one.
+* The `Bookshelf` class was refactored into two classes:
+  * `BookSaver` to save selected result to the bookshelf
+  * `Bookshelf` to show the list of saved books
+* The `app.py` script was refactored and extracted the business logic to another class:
+  * `MainMenuOption` to process the selected option from the main menu
+
+Save results to a file:
+
+* Implemented the class `BookshelfExporter`
+  * It exports the saved books to the file `data/bookshelf_data.txt` if books were saved. If no 
+    books were saved, it shows a corresponding message, and a file is not created.
+  * The next time the application runs, if the user saves books, upon exiting, these books are 
+    appended the exported file.
+* Implemented the class `BookshelfImporter`
+  * It imports saved books if the file exists `data/bookshelf_data.txt`.
+  * The imported books can be displayed in `View Reading List`
+  * The user can search and save more books, upon exiting, all the books in the Reading List are 
+    exported again to this text file.
+
 # References
 
 * Remove punctuation in a string [here](https://stackoverflow.com/a/266162)
